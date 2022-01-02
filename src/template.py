@@ -1,7 +1,7 @@
 def set_template(args):
     # Set the templates here
     #
-    if args.template.find('4X_SRE_HAN') >= 0:
+    if args.template.find('4X_SRE_AAN') >= 0:
         args.model = 'SRE_HAN_SIMD'
         args.n_resblocks = 20
         args.n_resgroups = 10
@@ -9,7 +9,7 @@ def set_template(args):
         args.reduction = 4
         args.scale = "4"
 
-    if args.template.find('8X_SRE_HAN') >= 0:
+    if args.template.find('8X_SRE_AAN') >= 0:
         args.model = 'SRE_HAN_SIMD'
         args.n_resblocks = 20
         args.n_resgroups = 10
@@ -49,7 +49,7 @@ def set_template(args):
     #     args.batch_size = 32
     #     args.patch_size = 192
 
-    # if args.template.find('SRE_HAN_COWC') >= 0:
+    # if args.template.find('SRE_AAN_COWC') >= 0:
     #     args.model = 'SRE_HAN_COWC'
     #     args.n_resblocks = 20
     #     args.n_resgroups = 10
