@@ -1,5 +1,5 @@
-# Squeeze-and-Residual-Excitation Holistic Attention Network For Improved Super Resolution in Remote Sensing Imagery
-Squeeze-and-Residual-Excitation Holistic Attention Network improves super-resolution (SR) on remote-sensing imagery compared to other state-of-the-art attention-based SR models.
+# Squeeze-and-Residual-Excitation Aggregated Attention Network For Improved Super Resolution in Remote Sensing Imagery
+Squeeze-and-Residual-Excitation Aggregated Attention Network improves super-resolution (SR) on remote-sensing imagery compared to other state-of-the-art attention-based SR models.
 
 The model is built in PyTorch 1.8.1. 
 
@@ -17,7 +17,7 @@ Super-resolution (SR) provides an excellent approach of improving applications r
 
 ## Network
 
-![SRE-HAN Super Resolution Framework](/figures/sre_han_complete.png)
+![SRE-AAN Super Resolution Framework](/figures/sre_aan_complete.png)
 
 ## Setup
 The setup can be done through one  of the following methods:
@@ -28,7 +28,7 @@ The setup can be done through one  of the following methods:
     ```
 2. Or it can also be created through the given "conda_environment.txt" file.
     ```bash
-   conda create --name sre-han --file conda_environment.txt
+   conda create --name sre-aan --file conda_environment.txt
     ```
 
 Use the created environment for testing and performing experiments.
@@ -43,10 +43,10 @@ The upsampled images will be found in the 'demo/results/results-Demo' folder.
 
 ```bash
 #for 4x upsampling
-python main.py --template 4X_SRE_HAN --pre_train ../trained_models/sre_han_x4.pt --n_GPUs=2 --data_test Demo --dir_demo ../demo/low_res_images --test_only --save ../demo/results --save_results
+python main.py --template 4X_SRE_AAN --pre_train ../trained_models/sre_han_x4.pt --n_GPUs=2 --data_test Demo --dir_demo ../demo/low_res_images --test_only --save ../demo/results --save_results
 
 #for 8x upsampling
-python main.py --template 8X_SRE_HAN --pre_train ../trained_models/sre_han_x8.pt --n_GPUs=2 --data_test Demo --dir_demo ../demo/low_res_images --test_only --save ../demo/results --save_results
+python main.py --template 8X_SRE_AAN --pre_train ../trained_models/sre_han_x8.pt --n_GPUs=2 --data_test Demo --dir_demo ../demo/low_res_images --test_only --save ../demo/results --save_results
 ```
 
 ## Results
@@ -73,10 +73,10 @@ YoloV5-Medium is trained over the ground truth dataset and then evaluated on the
 
 ### Visual Results for 8x Upsampling and Consequent Object Detection
 
-The visual results for the performance of the object detection model that has been trained on the ground truth dataset and then evaluated on the images upsampled through bicubic method and SRE-HAN model are shown here. 
+The visual results for the performance of the object detection model that has been trained on the ground truth dataset and then evaluated on the images upsampled through bicubic method and SRE-AAN model are shown here. 
 
 ![Visual Detection Results](/figures/8x_visual_detection_results.png)
-Ground truth trained YoloV5 Object Detection Model is applied over both of the above images and we can see that the detection model is unable to detection any of the vehicles in the bicubic upsampled image. On the other hand, Yolov5 detects many of the objects in the image upsampled through our SRE-HAN model.
+Ground truth trained YoloV5 Object Detection Model is applied over both of the above images and we can see that the detection model is unable to detection any of the vehicles in the bicubic upsampled image. On the other hand, Yolov5 detects many of the objects in the image upsampled through our SRE-AAN model.
 
 ![Visual Detection Results2](/figures/8x_visual_detection_results2.png)
-Similarly, in the bicubic upsampled image the detection model detects only 1 object, whereas in the SRE-HAN upsampled image all of the objects have been detected except one.
+Similarly, in the bicubic upsampled image the detection model detects only 1 object, whereas in the SRE-AAN upsampled image all of the objects have been detected except one.
